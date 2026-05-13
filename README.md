@@ -181,6 +181,8 @@ For the OpenAI profile, copy `.env.example` to `.env`, fill in the key and model
 ./scripts/omnix_openai.sh defend diag port 5000
 ```
 
+OpenAI freeform answers are a final `ask --assist` fallback after local memory, definitions, command routing, and guarded tool planning miss. Freeform answers may explain, calculate, or propose OmniX commands, but they do not claim local evidence was collected unless OmniX actually ran the command.
+
 TView JSONL exports are local SIEM-ready packet events (`omnix.tview.packet.v1`) with stable `NET.TCP.*`
 analysis codes. Defensive commands are diagnostic-first: OmniX may recommend a manual PID kill, service stop, or
 port-closure path, but it does not perform destructive action in this slice.
